@@ -18,57 +18,49 @@
  */
 import java.util.Scanner;
 
+public class Yams {
 
-public class Yams{
-
-    static void clearScreen(){
+    static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
     public static void main(String[] args) {
-        /*Dice d = new Dice();
-        for(int i = 0; i < 10; i++)
-        d.roll();
-        System.out.println("getValue(): " + d.getDiceType());
 
-        YamsDice yd = new YamsDice();
-        Scanner sc = new Scanner(System.in);
-        //System.out.println(yd.askDice(sc));
-        yd.printYams();
-        yd.rollYams(yd.askDice(sc));
-        yd.printYams();*/
-        
-        
-            
-
+        /*
+         * Dice d = new Dice(); for(int i = 0; i < 10; i++) d.roll();
+         * System.out.println("getValue(): " + d.getDiceType());
+         * 
+         * YamsDice yd = new YamsDice(); Scanner sc = new Scanner(System.in);
+         * //System.out.println(yd.askDice(sc)); yd.printYams();
+         * yd.rollYams(yd.askDice(sc)); yd.printYams();
+         */
 
         YamsDice myDice5 = new YamsDice();
         SheetPlayer player1 = new SheetPlayer();
-        Scanner sc= new Scanner(System.in);
-        int figureIndex;
-        for (int idx=0 ; idx<13 ; idx++){
+        Scanner sc = new Scanner(System.in);
+        // int figureIndex;
+
+        for (int idx = 0; idx < 13; idx++) {
             clearScreen();
             player1.printScore();
-            myDice5.rollYams("12345");//1st roll
+            myDice5.rollYams("12345");// 1st roll
             myDice5.printYams();
-            myDice5.rollYams(myDice5.askDice(sc));//2nd roll
+            myDice5.rollYams(myDice5.askDice(sc));// 2nd roll
             clearScreen();
             player1.printScore();
             myDice5.printYams();
-            //figureIndex=player1.askFigure(sc);
-            myDice5.rollYams(myDice5.askDice(sc));//3rd roll
-            //player1.updateScoring(figureIndex , myDice5.getScore(figureIndex));//
+            // figureIndex=player1.askFigure(sc);
+            myDice5.rollYams(myDice5.askDice(sc));// 3rd roll
+            // player1.updateScoring(figureIndex , myDice5.getScore(figureIndex));//
             clearScreen();
             player1.printScore();
             myDice5.printYams();
             System.out.print("press return");
-            sc.nextLine(); //wait
+            sc.nextLine(); // wait
         }
-        sc.close(); 
-        //System.out.println("Player1, your final score : "+ player1.totalScore());
+        sc.close();
+        // System.out.println("Player1, your final score : "+ player1.totalScore());
 
     }
 }
-
-
